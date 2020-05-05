@@ -12,7 +12,7 @@ steps:
   displayName: Build and push image
   inputs:
     containerRegistry: azure-pipelines-canary-k8s #replace with name of your Docker registry service connection
-    repository: pavanvamsi.azurecr.io/azure-pipelines-canary-k8s:$(Build.BuildId)
+    repository: azure-pipelines-canary-k8s
     command: buildAndPush
     Dockerfile: app/Dockerfile
     tags: |
