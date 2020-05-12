@@ -18,7 +18,7 @@ def hello():
         c.labels(custom_status = 'good').inc()
         return "Hello World!\n", 200
 
-@app.route('/scrum', methods=['POST'])
+@app.route('/scrum', methods=['POST', 'GET'])
 def scrum_order():
     members = ["AJ","Deepak","Rajendra","Zainu","Ambika","Soubhagya","Raghav",
                "Koushik","Tauhid","Jyotsna","Akshansh","Ankit","Rachit","Ganesh",
