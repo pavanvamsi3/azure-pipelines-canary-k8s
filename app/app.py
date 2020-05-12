@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-from random import randrange
+from random import randrange, shuffle
 from flask import Flask
 from prometheus_client import start_http_server, Counter
 
@@ -17,6 +17,16 @@ def hello():
     else:
         c.labels(custom_status = 'good').inc()
         return "Hello World!\n", 200
+
+@app.route('/scrum', methods=['POST'])
+def scrum_order():
+    members = ["AJ","Deepak","Rajendra","Zainu","Ambika","Soubhagya","Raghav",
+               "Koushik","Tauhid","Jyotsna","Akshansh","Ankit","Rachit","Ganesh",
+               "Shivam","Aman","Rohit","Vamsi"]
+    
+    members_list = ','.join(members)
+    
+    return members_list, 200
 
 start_http_server(8000)
 app.run(host = '0.0.0.0', port = 8080)
